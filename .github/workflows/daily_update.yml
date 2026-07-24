@@ -15,7 +15,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
   id-token: write
 
 jobs:
@@ -53,16 +52,6 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: daily quant report $(date +%Y-%m-%d)"
           git push
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: reports/
-
-      - name: Deploy to Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
 
 
