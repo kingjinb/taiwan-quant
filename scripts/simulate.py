@@ -40,7 +40,7 @@ def simulate():
     print(f"\n  分析基准日:  {analysis_date}  (模拟今日)")
     print(f"  推荐执行日:  {next_trading_day}  (模拟明日)")
     print(f"  数据源:      MockFetcher (模拟数据)")
-    print(f"  R/R 目标:    1.2")
+    print(f"  R/R 目标:    1.5")
     print(f"  最大止损:    5%")
     print("=" * 64)
 
