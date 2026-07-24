@@ -1,0 +1,61 @@
+﻿name: Daily Quant Update
+
+on:
+  schedule:
+    # Runs at 06:00 UTC every weekday (14:00 TW time, after market close)
+    - cron: "0 6 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      stocks:
+        description: "Stock IDs (comma-separated, default: top 10)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run analysis pipeline
+        run: python scripts/runner.py
+        env:
+          PYTHONPATH: .
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          PAGES_URL: ${{ vars.PAGES_URL || '' }}
+
+      - name: Commit reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          git diff --staged --quiet || git commit -m "chore: daily quant report $(date +%Y-%m-%d)"
+          git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: reports/
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
