@@ -193,12 +193,10 @@ class MockFetcher(BaseFetcher):
     ) -> pd.DataFrame:
         start = pd.Timestamp(start_date or date.today() - timedelta(days=365))
         end = pd.Timestamp(end_date or date.today())
-        dates = pd.date_range(start, end, freq="B")  # business days only
         n = len(dates)
+        np.random.seed(int(stock_id) * 67890 % 2**31)
         base_price = {"2330": 600, "2317": 100, "2454": 800}.get(stock_id, 100)
-        noise = pd.Series(
-            (pd.Series(range(n)) * 0.01 + np.random.randn(n)).cumsum()
-        )
+        noise = pd.Series((pd.Series(range(n)) * 0.01 + np.random.randn(n)).cumsum())
         closes = base_price + noise * 2
         df = pd.DataFrame({
             "stock_id": stock_id,
@@ -206,6 +204,9 @@ class MockFetcher(BaseFetcher):
             "open": closes + np.random.randn(n),
             "high": closes + abs(np.random.randn(n)) * 3,
             "low": closes - abs(np.random.randn(n)) * 3,
+            "close": closes,
+            "volume": np.random.randint(1000, 50000, n) * 1000,
+        })
             "close": closes,
             "volume": np.random.randint(1000, 50000, n) * 1000,
         })
