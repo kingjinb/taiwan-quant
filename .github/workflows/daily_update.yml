@@ -4,6 +4,8 @@ on:
   schedule:
     # Runs at 06:00 UTC every weekday (14:00 TW time, after market close)
     - cron: "0 6 * * 1-5"
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       stocks:
@@ -62,4 +64,5 @@ jobs:
       - name: Deploy to Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
