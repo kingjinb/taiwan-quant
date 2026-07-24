@@ -49,6 +49,45 @@ def send_card(
     return _post(webhook_url, payload)
 
 
+
+def send_card_with_app(
+    app_id: str,
+    app_secret: str,
+    chat_id: str,
+    title: str,
+    elements: list[dict],
+    header_color: str = "blue",
+) -> bool:
+    """Send interactive card using Feishu custom app (App ID + Secret)."""
+    import requests
+    try:
+        r = requests.post(
+            "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal",
+            json={"app_id": app_id, "app_secret": app_secret},
+            timeout=10,
+        )
+        token_data = r.json()
+        if token_data.get("code") != 0:
+            return False
+        token = token_data["tenant_access_token"]
+    except Exception:
+        return False
+    card = {
+        "config": {"wide_screen_mode": True},
+        "header": {"title": {"tag": "plain_text", "content": title}, "template": header_color},
+        "elements": elements,
+    }
+    try:
+        r = requests.post(
+            "https://open.feishu.cn/open-apis/im/v1/messages?receive_id_type=chat_id",
+            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
+            json={"receive_id": chat_id, "msg_type": "interactive", "content": json.dumps(card)},
+            timeout=10,
+        )
+        return r.json().get("code") == 0
+    except Exception:
+        return False
+
 def _post(webhook_url: str, payload: dict) -> bool:
     """POST a message to Feishu webhook."""
     import requests

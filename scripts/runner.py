@@ -110,30 +110,56 @@ def run_pipeline():
     generate_html_report(summary, indicators if sample_df.empty is False else {})
 
 
-    # 6. Send to Feishu (if webhook configured)
+    # 6. Send to Feishu
     print("\n[6] Sending to Feishu...")
     webhook_url = os.environ.get("FEISHU_WEBHOOK_URL", "")
-    if webhook_url:
-        try:
-            from notification.feishu import build_quant_card, send_card
+    app_id = os.environ.get("FEISHU_APP_ID", "")
+    app_secret = os.environ.get("FEISHU_APP_SECRET", "")
+    chat_id = os.environ.get("FEISHU_CHAT_ID", "")
 
+    sent = False
+    if app_id and app_secret and chat_id:
+        try:
+            from notification.feishu import build_quant_card, send_card_with_app
             with open(OUTPUT_DIR / "summary.json") as f:
                 summary = json.load(f)
-
-            indicators = {}
             ind_path = OUTPUT_DIR / "indicators_2330.json"
+            indicators = {}
             if ind_path.exists():
-                with open(ind_path) as f:
-                    indicators = json.load(f)
-
-            factor_scores = []
+                with open(ind_path) as f: indicators = json.load(f)
             fs_path = OUTPUT_DIR / "factor_scores_2330.json"
+            factor_scores = []
             if fs_path.exists():
-                with open(fs_path) as f:
-                    factor_scores = json.load(fs_path)
-
+                with open(fs_path) as f: factor_scores = json.load(f)
             pages_url = os.environ.get("PAGES_URL", "")
+            elements = build_quant_card(
+                date_str=date.today().isoformat(),
+                summary=summary,
+                indicators=indicators,
+                factor_scores=factor_scores,
+                pages_url=pages_url,
+            )
+            ok = send_card_with_app(app_id, app_secret, chat_id, "台湾量化日报", elements)
+            if ok:
+                print("   Feishu card sent via app!")
+                sent = True
+        except Exception as e:
+            print(f"   Feishu app error: {e}")
 
+    if not sent and webhook_url:
+        try:
+            from notification.feishu import build_quant_card, send_card
+            with open(OUTPUT_DIR / "summary.json") as f:
+                summary = json.load(f)
+            ind_path = OUTPUT_DIR / "indicators_2330.json"
+            indicators = {}
+            if ind_path.exists():
+                with open(ind_path) as f: indicators = json.load(f)
+            fs_path = OUTPUT_DIR / "factor_scores_2330.json"
+            factor_scores = []
+            if fs_path.exists():
+                with open(fs_path) as f: factor_scores = json.load(f)
+            pages_url = os.environ.get("PAGES_URL", "")
             elements = build_quant_card(
                 date_str=date.today().isoformat(),
                 summary=summary,
@@ -142,14 +168,13 @@ def run_pipeline():
                 pages_url=pages_url,
             )
             ok = send_card(webhook_url, "台湾量化日报", elements)
-            if ok:
-                print("   Feishu card sent!")
-            else:
-                print("   Failed to send Feishu card")
+            print("   Feishu card sent!" if ok else "   Failed to send")
+            sent = ok
         except Exception as e:
-            print(f"   Feishu notification error: {e}")
-    else:
-        print("   Skipped (FEISHU_WEBHOOK_URL not set)")
+            print(f"   Feishu error: {e}")
+
+    if not sent:
+        print("   Skipped (no Feishu credentials)")
 
         print("\nDone! All reports saved to:", OUTPUT_DIR)
 
