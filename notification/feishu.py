@@ -1,4 +1,74 @@
-﻿"""
+
+
+def build_recommendation_card(
+    date_str: str,
+    next_date_str: str,
+    recs: list[dict],
+    summary: dict,
+    pages_url: str | None = None,
+) -> list[dict]:
+    """Build a recommendation-focused Feishu card."""
+    elements = []
+
+    # Header
+    elements.append({
+        "tag": "div",
+        "text": md(
+            f"**分析日期**: {date_str}  |  **推荐执行日**: {next_date_str}\n"
+            f"**数据源**: {summary.get('data_source', 'N/A').upper()}  |  "
+            f"**监控股数**: {summary.get('stocks_fetched', 0)}"
+        ),
+    })
+    elements.append(hr())
+
+    if not recs:
+        elements.append({
+            "tag": "div",
+            "text": md("今日无符合条件的推荐标的。"),
+        })
+        elements.append(hr())
+    else:
+        for i, rec in enumerate(recs[:5], 1):
+            profit = rec.get("potential_profit_pct", 0)
+            loss = rec.get("potential_loss_pct", 0)
+            confidence = rec.get("confidence", "N/A")
+            reason = rec.get("reason", "")
+
+            text_lines = [
+                f"**推荐 #{i}**  {rec.get('stock_id', '')} {rec.get('stock_name', '')}  |  {confidence}",
+                f"建议买入价:  {rec.get('entry_price', 0):.2f}",
+                f"止盈目标价:  {rec.get('target_price', 0):.2f}  ({profit:+.2f}%)",
+                f"止损价:      {rec.get('stop_loss', 0):.2f}  ({loss:.2f}%)",
+                f"R/R 比率:    {rec.get('rr_ratio', 0):.2f}  |  建议持仓: {rec.get('holding_days', 0)} 天",
+            ]
+            if reason:
+                text_lines.append(f"依据: {reason}")
+
+            elements.append({"tag": "div", "text": md("\n".join(text_lines))})
+            if i < min(len(recs), 5):
+                elements.append({"tag": "hr"})
+
+        # Stats
+        avg_rr = sum(r.get("rr_ratio", 0) for r in recs) / len(recs) if recs else 0
+        high_c = sum(1 for r in recs if r.get("confidence") == "HIGH")
+        elements.append(hr())
+        elements.append({
+            "tag": "div",
+            "text": md(
+                f"入选: {len(recs)} 支  |  平均 R/R: {avg_rr:.2f}  |  高信心: {high_c}"
+            ),
+        })
+
+    # Links
+    elements.append(hr())
+    if pages_url:
+        elements.append({"tag": "div", "text": md(f"[查看完整报告]({pages_url})")})
+
+    elements.append(
+        note(f"Taiwan Quant Platform - {date_str}\n仅供参考，不构成投资建议")
+    )
+    return elements
+\n﻿"""
 Feishu (Lark) webhook bot client.
 Sends interactive card messages to Feishu group chats.
 """

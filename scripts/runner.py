@@ -132,13 +132,30 @@ def run_pipeline():
             if fs_path.exists():
                 with open(fs_path) as f: factor_scores = json.load(f)
             pages_url = os.environ.get("PAGES_URL", "")
-            elements = build_quant_card(
-                date_str=date.today().isoformat(),
-                summary=summary,
-                indicators=indicators,
-                factor_scores=factor_scores,
-                pages_url=pages_url,
-            )
+            # Load recommendations
+            recs_path = OUTPUT_DIR / "recommendations.json"
+            if recs_path.exists():
+                with open(recs_path) as f: recommendations = json.load(f)
+            else:
+                recommendations = []
+
+            if recommendations:
+                from notification.feishu import build_recommendation_card
+                elements = build_recommendation_card(
+                    date_str=date.today().isoformat(),
+                    next_date_str=(date.today().isoformat()),
+                    recs=recommendations,
+                    summary=summary,
+                    pages_url=pages_url,
+                )
+            else:
+                elements = build_quant_card(
+                    date_str=date.today().isoformat(),
+                    summary=summary,
+                    indicators=indicators,
+                    factor_scores=factor_scores,
+                    pages_url=pages_url,
+                )
             ok = send_card_with_app(app_id, app_secret, chat_id, "台湾量化日报", elements)
             if ok:
                 print("   Feishu card sent via app!")
@@ -160,13 +177,30 @@ def run_pipeline():
             if fs_path.exists():
                 with open(fs_path) as f: factor_scores = json.load(f)
             pages_url = os.environ.get("PAGES_URL", "")
-            elements = build_quant_card(
-                date_str=date.today().isoformat(),
-                summary=summary,
-                indicators=indicators,
-                factor_scores=factor_scores,
-                pages_url=pages_url,
-            )
+            # Load recommendations
+            recs_path = OUTPUT_DIR / "recommendations.json"
+            if recs_path.exists():
+                with open(recs_path) as f: recommendations = json.load(f)
+            else:
+                recommendations = []
+
+            if recommendations:
+                from notification.feishu import build_recommendation_card
+                elements = build_recommendation_card(
+                    date_str=date.today().isoformat(),
+                    next_date_str=(date.today().isoformat()),
+                    recs=recommendations,
+                    summary=summary,
+                    pages_url=pages_url,
+                )
+            else:
+                elements = build_quant_card(
+                    date_str=date.today().isoformat(),
+                    summary=summary,
+                    indicators=indicators,
+                    factor_scores=factor_scores,
+                    pages_url=pages_url,
+                )
             ok = send_card(webhook_url, "台湾量化日报", elements)
             print("   Feishu card sent!" if ok else "   Failed to send")
             sent = ok
