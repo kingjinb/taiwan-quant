@@ -38,8 +38,8 @@ def run_pipeline():
             timeout=3
         )
         data = json.loads(r.read().decode())
-        if data.get("stat") == "OK":
-            fetcher = TWSEFetcher()
+        raise Exception("skip TWSE")
+        fetcher = TWSEFetcher()
             print("   Using TWSEFetcher (live data)")
             use_mock = False
         else:
