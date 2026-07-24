@@ -1,4 +1,4 @@
-﻿"""
+"""
 GitHub Actions Runner for Taiwan Quant Platform.
 Fetches data, runs analysis, and generates reports.
 """
@@ -29,24 +29,9 @@ def run_pipeline():
     from data.fetchers.twse import TWSEFetcher, MockFetcher
     from config.settings import DEFAULT_STOCK_LIST
 
-    import urllib.request
     use_mock = True
-    try:
-        # Quick connectivity test (3s timeout)
-        r = urllib.request.urlopen(
-            "https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2330",
-            timeout=3
-        )
-        data = json.loads(r.read().decode())
-        raise Exception("skip TWSE")
-        fetcher = TWSEFetcher()
-            print("   Using TWSEFetcher (live data)")
-            use_mock = False
-        else:
-            raise Exception("TWSE API not available")
-    except Exception:
-        fetcher = MockFetcher()
-        print("   Using MockFetcher (simulated data)")
+    fetcher = MockFetcher()
+    print("   Using MockFetcher (simulated data)")
 
     # Fetch top stocks
     end = date.today()
@@ -58,6 +43,18 @@ def run_pipeline():
             all_data[sid] = df.to_dict("records")
         print(f"   {sid}: {len(df)} rows")
 
+    # Run strategy engine
+    print("\n[1b] Running strategy engine...")
+    from strategies.high_win_rate import HighWinRateEngine
+    engine = HighWinRateEngine(rr_target=1.5, top_n=5, lookback_days=400)
+    try:
+        recs = engine.scan_universe(fetcher, date.today())
+        save_report("recommendations.json", [r.to_dict() for r in recs])
+        print(f"   Generated {len(recs)} recommendations")
+    except Exception as e:
+        print(f"   Strategy error: {e}")
+        save_report("recommendations.json", [])
+
     # 2. Compute indicators for a sample stock (2330)
     print("\n[2] Computing technical indicators...")
     from analysis.indicators.technical import compute_all
@@ -67,7 +64,6 @@ def run_pipeline():
     if not sample_df.empty:
         df_tech = compute_all(sample_df)
         latest = df_tech.iloc[-1].to_dict()
-        # Convert to JSON-serializable
         indicators = {}
         for k, v in latest.items():
             try:
@@ -109,7 +105,6 @@ def run_pipeline():
     print("\n[5] Generating HTML report...")
     generate_html_report(summary, indicators if sample_df.empty is False else {})
 
-
     # 6. Send to Feishu
     print("\n[6] Sending to Feishu...")
     webhook_url = os.environ.get("FEISHU_WEBHOOK_URL", "")
@@ -132,7 +127,6 @@ def run_pipeline():
             if fs_path.exists():
                 with open(fs_path) as f: factor_scores = json.load(f)
             pages_url = os.environ.get("PAGES_URL", "")
-            # Load recommendations
             recs_path = OUTPUT_DIR / "recommendations.json"
             if recs_path.exists():
                 with open(recs_path) as f: recommendations = json.load(f)
@@ -177,30 +171,13 @@ def run_pipeline():
             if fs_path.exists():
                 with open(fs_path) as f: factor_scores = json.load(f)
             pages_url = os.environ.get("PAGES_URL", "")
-            # Load recommendations
-            recs_path = OUTPUT_DIR / "recommendations.json"
-            if recs_path.exists():
-                with open(recs_path) as f: recommendations = json.load(f)
-            else:
-                recommendations = []
-
-            if recommendations:
-                from notification.feishu import build_recommendation_card
-                elements = build_recommendation_card(
-                    date_str=date.today().isoformat(),
-                    next_date_str=(date.today().isoformat()),
-                    recs=recommendations,
-                    summary=summary,
-                    pages_url=pages_url,
-                )
-            else:
-                elements = build_quant_card(
-                    date_str=date.today().isoformat(),
-                    summary=summary,
-                    indicators=indicators,
-                    factor_scores=factor_scores,
-                    pages_url=pages_url,
-                )
+            elements = build_quant_card(
+                date_str=date.today().isoformat(),
+                summary=summary,
+                indicators=indicators,
+                factor_scores=factor_scores,
+                pages_url=pages_url,
+            )
             ok = send_card(webhook_url, "台湾量化日报", elements)
             print("   Feishu card sent!" if ok else "   Failed to send")
             sent = ok
@@ -210,7 +187,7 @@ def run_pipeline():
     if not sent:
         print("   Skipped (no Feishu credentials)")
 
-        print("\nDone! All reports saved to:", OUTPUT_DIR)
+    print("\nDone! All reports saved to:", OUTPUT_DIR)
 
 
 def save_report(filename: str, data):
@@ -234,23 +211,14 @@ def generate_html_report(summary: dict, indicators: dict):
         f"<p>获取股票数: {summary['stocks_fetched']}</p>",
         "</div>",
     ]
-
     if indicators:
         html.append("<div class='card'><h2>台积电(2330) 最新指标</h2>")
         for key, val in indicators.items():
             if isinstance(val, (int, float)):
-                html.append(
-                    f"<div class='metric'><div class='value'>{val:.2f}</div>"
-                    f"<div class='label'>{key}</div></div>"
-                )
+                html.append(f"<div class='metric'><div class='value'>{val:.2f}</div><div class='label'>{key}</div></div>")
         html.append("</div>")
-
-    html.append(
-        "<p style='color:#999;font-size:12px;margin-top:40px'>"
-        "Generated by Taiwan Quant Platform · GitHub Actions</p>"
-    )
+    html.append("<p style='color:#999;font-size:12px;margin-top:40px'>Generated by Taiwan Quant Platform · GitHub Actions</p>")
     html.append("</body></html>")
-
     with open(OUTPUT_DIR / "report.html", "w", encoding="utf-8") as f:
         f.write("\n".join(html))
     print("   Saved: report.html")
@@ -258,6 +226,3 @@ def generate_html_report(summary: dict, indicators: dict):
 
 if __name__ == "__main__":
     run_pipeline()
-
-
-
