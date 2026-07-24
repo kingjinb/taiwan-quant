@@ -64,13 +64,15 @@ def send_card_with_app(
         r = requests.post(
             "https://open.feishu.cn/open-apis/auth/v3/tenant_access_token/internal",
             json={"app_id": app_id, "app_secret": app_secret},
-            timeout=10,
+            timeout=15,
         )
         token_data = r.json()
+        print("[Feishu] Auth status:", token_data.get("code"), token_data.get("msg", ""))
         if token_data.get("code") != 0:
             return False
         token = token_data["tenant_access_token"]
-    except Exception:
+    except Exception as exc:
+        print("[Feishu] Auth error:", exc)
         return False
     card = {
         "config": {"wide_screen_mode": True},

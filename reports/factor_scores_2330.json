@@ -1,242 +1,242 @@
 [
   {
-    "date": "2026-04-29",
-    "composite_score": -0.08786995153309098
-  },
-  {
-    "date": "2026-04-30",
-    "composite_score": -0.002450975276828006
-  },
-  {
     "date": "2026-05-04",
-    "composite_score": -0.12551158560339487
+    "composite_score": -0.03242388869053408
   },
   {
     "date": "2026-05-05",
-    "composite_score": -0.2331594314288977
+    "composite_score": -0.13843487717017908
   },
   {
     "date": "2026-05-06",
-    "composite_score": -0.06904740480363175
+    "composite_score": 0.05010157673821626
   },
   {
     "date": "2026-05-07",
-    "composite_score": -0.004017189598849838
+    "composite_score": -0.20678693414594124
   },
   {
     "date": "2026-05-08",
-    "composite_score": -0.07166564610917847
+    "composite_score": 0.15869504304455342
   },
   {
     "date": "2026-05-11",
-    "composite_score": 0.13056488181538858
+    "composite_score": -0.01487324510278276
   },
   {
     "date": "2026-05-12",
-    "composite_score": 0.14502571944751358
+    "composite_score": -0.09954540723428103
   },
   {
     "date": "2026-05-13",
-    "composite_score": 5.3239696679121324e-05
+    "composite_score": -0.05316561029559513
   },
   {
     "date": "2026-05-14",
-    "composite_score": -0.04502640122014794
+    "composite_score": 0.06399013226734603
   },
   {
     "date": "2026-05-15",
-    "composite_score": -0.11383714423725481
+    "composite_score": -0.132509184115361
   },
   {
     "date": "2026-05-18",
-    "composite_score": -0.10498602779229194
+    "composite_score": -0.11306169299030744
   },
   {
     "date": "2026-05-19",
-    "composite_score": 0.08342995836252713
+    "composite_score": -0.05410725677040804
   },
   {
     "date": "2026-05-20",
-    "composite_score": 0.00047153725780656956
+    "composite_score": 0.1605863118026494
   },
   {
     "date": "2026-05-21",
-    "composite_score": -0.15622932255413916
+    "composite_score": 0.2640225282320723
   },
   {
     "date": "2026-05-22",
-    "composite_score": -0.10991330473904752
+    "composite_score": -0.1122944301805399
   },
   {
     "date": "2026-05-25",
-    "composite_score": -0.07485852346838891
+    "composite_score": -0.1063736740966157
   },
   {
     "date": "2026-05-26",
-    "composite_score": 0.04276990134827615
+    "composite_score": 0.14732502607435732
   },
   {
     "date": "2026-05-27",
-    "composite_score": 0.16464604710859598
+    "composite_score": 0.1161449000190587
   },
   {
     "date": "2026-05-28",
-    "composite_score": 0.12543346664664268
+    "composite_score": -0.016901835619102863
   },
   {
     "date": "2026-05-29",
-    "composite_score": 0.44999999999999996
+    "composite_score": -0.17284259437732952
   },
   {
     "date": "2026-06-01",
-    "composite_score": 0.04245168307270837
+    "composite_score": -0.00617032644740518
   },
   {
     "date": "2026-06-02",
-    "composite_score": -0.15150759786821746
+    "composite_score": 0.0903985288357141
   },
   {
     "date": "2026-06-03",
-    "composite_score": -0.2530428087757719
+    "composite_score": -0.17538144958450996
   },
   {
     "date": "2026-06-04",
-    "composite_score": -0.210409353251214
+    "composite_score": -0.03685185881761873
   },
   {
     "date": "2026-06-05",
-    "composite_score": 0.021941536556845862
+    "composite_score": -0.22323313769267278
   },
   {
     "date": "2026-06-08",
-    "composite_score": 0.16358703501209276
+    "composite_score": 0.00951351278783843
   },
   {
     "date": "2026-06-09",
-    "composite_score": -0.007401523765854281
+    "composite_score": 0.2908249756126475
   },
   {
     "date": "2026-06-10",
-    "composite_score": 0.11665753417688428
+    "composite_score": 0.2861382259224262
   },
   {
     "date": "2026-06-11",
-    "composite_score": -0.0087322666175331
+    "composite_score": 0.1994756886057087
   },
   {
     "date": "2026-06-12",
-    "composite_score": -0.2112427423509345
+    "composite_score": -0.06440417307430342
   },
   {
     "date": "2026-06-15",
-    "composite_score": -0.1226453942912854
+    "composite_score": -0.052151779815183326
   },
   {
     "date": "2026-06-16",
-    "composite_score": -0.025148800324283568
+    "composite_score": -0.17054672227745832
   },
   {
     "date": "2026-06-17",
-    "composite_score": -0.06348115367470454
+    "composite_score": -0.22920299951461967
   },
   {
     "date": "2026-06-18",
-    "composite_score": 0.22953682224248906
+    "composite_score": 0.18850437009987125
+  },
+  {
+    "date": "2026-06-19",
+    "composite_score": 0.04951887255368407
   },
   {
     "date": "2026-06-22",
-    "composite_score": 0.08964985070862472
+    "composite_score": -0.13854608590139625
   },
   {
     "date": "2026-06-23",
-    "composite_score": -0.012979588393058804
+    "composite_score": 0.007507623072520726
   },
   {
     "date": "2026-06-24",
-    "composite_score": 0.23554183529920578
+    "composite_score": 0.0436539808792599
   },
   {
     "date": "2026-06-25",
-    "composite_score": -0.0835660631469359
+    "composite_score": -0.20594241460349408
   },
   {
     "date": "2026-06-26",
-    "composite_score": 0.04522944251256041
+    "composite_score": 0.04033202991292059
   },
   {
     "date": "2026-06-29",
-    "composite_score": -0.11013654667961481
+    "composite_score": 0.13492592640871262
   },
   {
     "date": "2026-06-30",
-    "composite_score": -0.006488009588525903
+    "composite_score": -0.08560095734636365
   },
   {
     "date": "2026-07-01",
-    "composite_score": -0.07955207633668586
+    "composite_score": 0.09213888649978216
   },
   {
     "date": "2026-07-02",
-    "composite_score": -0.08865466081676447
+    "composite_score": 0.040272112487845436
   },
   {
     "date": "2026-07-03",
-    "composite_score": -0.08215054333446323
+    "composite_score": -0.04712717263196757
   },
   {
     "date": "2026-07-06",
-    "composite_score": -0.21582948212701458
+    "composite_score": -0.17441446485475431
   },
   {
     "date": "2026-07-07",
-    "composite_score": -0.007897178354302203
+    "composite_score": 0.11621564984055194
   },
   {
     "date": "2026-07-08",
-    "composite_score": -0.07087326535445292
+    "composite_score": 0.07362529194626996
   },
   {
     "date": "2026-07-09",
-    "composite_score": 0.09910074405622664
+    "composite_score": -0.0982182281808136
+  },
+  {
+    "date": "2026-07-10",
+    "composite_score": 0.1985103288844013
   },
   {
     "date": "2026-07-13",
-    "composite_score": 0.10010690767473536
+    "composite_score": 0.028588403769745335
   },
   {
     "date": "2026-07-14",
-    "composite_score": 0.13647818296316364
+    "composite_score": 0.13853998383115995
   },
   {
     "date": "2026-07-15",
-    "composite_score": -0.01325618811616573
+    "composite_score": -0.09014816019449777
   },
   {
     "date": "2026-07-16",
-    "composite_score": -0.07448998409775189
+    "composite_score": -0.1844443046457874
   },
   {
     "date": "2026-07-17",
-    "composite_score": 0.44999999999999996
+    "composite_score": -0.23620743229263602
   },
   {
     "date": "2026-07-20",
-    "composite_score": 0.03610797132884673
+    "composite_score": -0.11998411531153545
   },
   {
     "date": "2026-07-21",
-    "composite_score": -0.19462714675692053
+    "composite_score": 0.44999999999999996
   },
   {
     "date": "2026-07-22",
-    "composite_score": -0.19139056199435128
+    "composite_score": 0.27536100737938046
   },
   {
     "date": "2026-07-23",
-    "composite_score": -0.22729901521214446
+    "composite_score": -0.10206280373782167
   },
   {
     "date": "2026-07-24",
-    "composite_score": -0.1486808245979367
+    "composite_score": 0.11626928677220269
   }
 ]
