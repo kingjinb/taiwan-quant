@@ -249,7 +249,7 @@ class HighWinRateEngine:
         stock_ids: Optional[List[str]] = None,
     ) -> List[Recommendation]:
         if stock_ids is None:
-            stock_ids = [s for s in DEFAULT_STOCK_LIST if len(s) == 4]
+            stock_ids = [s for s in DEFAULT_STOCK_LIST if len(s) == 4][:10]
         end = analysis_date
         start = end - timedelta(days=self.lookback_days)
 
