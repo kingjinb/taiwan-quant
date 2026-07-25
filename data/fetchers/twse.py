@@ -207,9 +207,6 @@ class MockFetcher(BaseFetcher):
             "close": closes,
             "volume": np.random.randint(1000, 50000, n) * 1000,
         })
-            "close": closes,
-            "volume": np.random.randint(1000, 50000, n) * 1000,
-        })
         return df.reset_index(drop=True)
 
     def fetch_stock_list(self) -> pd.DataFrame:
