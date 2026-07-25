@@ -28,16 +28,24 @@ def run_pipeline():
     print("=" * 50)
 
     print("\n[1] Strategy engine...")
-    from strategies.high_win_rate import HighWinRateEngine
-    from data.fetchers.twse import TWSEFetcher
-    fetcher = TWSEFetcher()
+   from strategies.high_win_rate import HighWinRateEngine
+   from data.fetchers.twse import TWSEFetcher
+    from scripts.tracker import load_predictions, add_predictions, compute_stats
+   fetcher = TWSEFetcher()
     print("   Using TWSEFetcher (live data)")
     engine = HighWinRateEngine(rr_target=1.5, top_n=5, lookback_days=250)
     recs = engine.scan_universe(fetcher, date.today())
-    save_report("recommendations.json", [r.to_dict() for r in recs])
-    print(f"   {len(recs)} recommendations generated")
+   save_report("recommendations.json", [r.to_dict() for r in recs])
+   print(f"   {len(recs)} recommendations generated")
+    preds = load_predictions(OUTPUT_DIR / "predictions.json")
+    preds = add_predictions(preds, [r.to_dict() for r in recs])
+    save_report("predictions.json", preds)
+    stats = compute_stats(preds)
+    save_report("stats.json", stats)
+    if stats["resolved"] > 0:
+        print(f"   Performance: {stats['resolved']} resolved, WR {stats['wr']}%, PF {stats['pf']}")
 
-    print("\n[2] Summary...")
+   print("\n[2] Summary...")
     save_report("summary.json", {
         "date": date.today().isoformat(),
         "data_source": "twse",
