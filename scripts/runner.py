@@ -32,7 +32,7 @@ def run_pipeline():
     from data.fetchers.twse import TWSEFetcher
     fetcher = TWSEFetcher()
     print("   Using TWSEFetcher (live data)")
-    engine = HighWinRateEngine(rr_target=1.5, top_n=5, lookback_days=400)
+    engine = HighWinRateEngine(rr_target=1.5, top_n=5, lookback_days=250)
     recs = engine.scan_universe(fetcher, date.today())
     save_report("recommendations.json", [r.to_dict() for r in recs])
     print(f"   {len(recs)} recommendations generated")

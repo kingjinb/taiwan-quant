@@ -117,7 +117,7 @@ class HighWinRateEngine:
         if macd > macd_signal and rsi > 50:
             entry_signals.append(("momentum", min((rsi - 50) / 30, 1.0)))
         # Signal D: Basic uptrend fallback
-        if rsi > 55 and dist_ma20_val > 0:
+        if rsi > 55 and dist_ma20 > 0:
             entry_signals.append(("趋势上行", min(0.5, (rsi - 50) / 40)))
 
         if not entry_signals:
