@@ -28,9 +28,9 @@ def run_pipeline():
     print("=" * 50)
 
     print("\n[1] Strategy engine...")
-   from data.fetchers.twse import MockFetcher
+    from data.fetchers.twse import MockFetcher
     from strategies.high_win_rate import HighWinRateEngine
-
+    from data.fetchers.twse import TWSEFetcher
     import urllib.request, ssl
     ssl._create_default_https_context = ssl._create_unverified_context
     try:
