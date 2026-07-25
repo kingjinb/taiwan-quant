@@ -1,0 +1,15 @@
+{
+  "rr_target": 1.5,
+  "max_stop_pct": 5.0,
+  "min_stop_pct": 1.5,
+  "atr_stop_multiplier": 2.5,
+  "volume_ratio": 1.0,
+  "rsi_threshold": 40,
+  "optimized_date": "2026-07-01",
+  "optimized_metrics": {
+    "trades": 0,
+    "wr": 0,
+    "pf": 0,
+    "avg_pnl": 0
+  }
+}

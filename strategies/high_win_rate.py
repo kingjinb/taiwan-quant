@@ -41,8 +41,17 @@ class HighWinRateEngine:
         self.atr_period = atr_period
         self.atr_stop_multiplier = atr_stop_multiplier
         self.pullback_threshold = pullback_threshold
-        self.lookback_days = lookback_days
-        self.stock_name_map = STOCK_NAME_MAP
+       self.lookback_days = lookback_days
+       self.stock_name_map = STOCK_NAME_MAP
+        import json
+        from pathlib import Path
+        cfg_path = Path(__file__).resolve().parent.parent / "config" / "params.json"
+        if cfg_path.exists():
+            with open(cfg_path) as f:
+                cfg = json.load(f)
+            for key in ["rr_target", "max_stop_pct", "min_stop_pct", "atr_stop_multiplier"]:
+                if key in cfg:
+                    setattr(self, key, cfg[key])
 
     def analyze(
         self,
