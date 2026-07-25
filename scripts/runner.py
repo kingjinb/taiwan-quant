@@ -28,19 +28,10 @@ def run_pipeline():
     print("=" * 50)
 
     print("\n[1] Strategy engine...")
-    from data.fetchers.twse import MockFetcher
     from strategies.high_win_rate import HighWinRateEngine
     from data.fetchers.twse import TWSEFetcher
-    import urllib.request, ssl
-    ssl._create_default_https_context = ssl._create_unverified_context
-    try:
-        test = urllib.request.urlopen("https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2330", timeout=5)
-        from data.fetchers.twse import TWSEFetcher
-        fetcher = TWSEFetcher()
-        print("   Using TWSEFetcher (live data)")
-    except Exception:
-        fetcher = MockFetcher()
-        print("   Using MockFetcher (simulated data)")
+    fetcher = TWSEFetcher()
+    print("   Using TWSEFetcher (live data)")
     engine = HighWinRateEngine(rr_target=1.5, top_n=5, lookback_days=400)
     recs = engine.scan_universe(fetcher, date.today())
     save_report("recommendations.json", [r.to_dict() for r in recs])
@@ -49,7 +40,7 @@ def run_pipeline():
     print("\n[2] Summary...")
     save_report("summary.json", {
         "date": date.today().isoformat(),
-        "data_source": "mock",
+        "data_source": "twse",
         "stocks_fetched": 10,
     })
 
@@ -71,7 +62,7 @@ def run_pipeline():
             date_str=date.today().isoformat(),
             next_date_str=(date.today().isoformat()),
             recs=recs_data,
-            summary={"data_source": "mock", "stocks_fetched": 10},
+            summary={"data_source": "twse", "stocks_fetched": 10},
         )
         ok = send_card_with_app(app_id, app_secret, chat_id, "台湾量化日报", elements)
         print("   Feishu card sent!" if ok else "   Send failed")
