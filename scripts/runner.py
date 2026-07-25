@@ -37,8 +37,21 @@ def run_pipeline():
     recs = engine.scan_universe(fetcher, date.today())
    save_report("recommendations.json", [r.to_dict() for r in recs])
    print(f"   {len(recs)} recommendations generated")
-    preds = load_predictions(OUTPUT_DIR / "predictions.json")
-    preds = add_predictions(preds, [r.to_dict() for r in recs])
+   preds = load_predictions(OUTPUT_DIR / "predictions.json")
+    from scripts.tracker import check_predictions
+    from config.settings import DEFAULT_STOCK_LIST
+    price_data = {}
+    for sid in [s for s in DEFAULT_STOCK_LIST if len(s) == 4]:
+        try:
+            df = fetcher.fetch_daily_prices(sid, date.today() - timedelta(days=5), date.today())
+            if not df.empty:
+                price_data[sid] = df["close"].iloc[-1]
+        except Exception:
+            continue
+    if price_data:
+        preds = check_predictions(preds, price_data)
+        print(f"   Checked {len(price_data)} stocks, resolved {sum(1 for p in preds if p.get('status') != 'pending')} predictions")
+   preds = add_predictions(preds, [r.to_dict() for r in recs])
     save_report("predictions.json", preds)
     stats = compute_stats(preds)
     save_report("stats.json", stats)
