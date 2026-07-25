@@ -41,7 +41,7 @@ def run_pipeline():
     save_report("summary.json", {
         "date": date.today().isoformat(),
         "data_source": "twse",
-        "stocks_fetched": 10,
+        "stocks_fetched": 30,
     })
 
     print("\n[3] Sending to Feishu...")
@@ -62,7 +62,7 @@ def run_pipeline():
             date_str=date.today().isoformat(),
             next_date_str=(date.today().isoformat()),
             recs=recs_data,
-            summary={"data_source": "twse", "stocks_fetched": 10},
+            summary={"data_source": "twse", "stocks_fetched": 30},
         )
         ok = send_card_with_app(app_id, app_secret, chat_id, "台湾量化日报", elements)
         print("   Feishu card sent!" if ok else "   Send failed")
