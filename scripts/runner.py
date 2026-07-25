@@ -28,10 +28,19 @@ def run_pipeline():
     print("=" * 50)
 
     print("\n[1] Strategy engine...")
-    from data.fetchers.twse import MockFetcher
+   from data.fetchers.twse import MockFetcher
     from strategies.high_win_rate import HighWinRateEngine
 
-    fetcher = MockFetcher()
+    import urllib.request, ssl
+    ssl._create_default_https_context = ssl._create_unverified_context
+    try:
+        test = urllib.request.urlopen("https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20260701&stockNo=2330", timeout=5)
+        from data.fetchers.twse import TWSEFetcher
+        fetcher = TWSEFetcher()
+        print("   Using TWSEFetcher (live data)")
+    except Exception:
+        fetcher = MockFetcher()
+        print("   Using MockFetcher (simulated data)")
     engine = HighWinRateEngine(rr_target=1.5, top_n=5, lookback_days=400)
     recs = engine.scan_universe(fetcher, date.today())
     save_report("recommendations.json", [r.to_dict() for r in recs])
