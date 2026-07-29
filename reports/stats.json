@@ -1,9 +1,9 @@
 {
-  "total": 8,
-  "resolved": 1,
+  "total": 9,
+  "resolved": 2,
   "pending": 7,
   "wr": 0.0,
   "avg_win": 0,
-  "avg_loss": -6.6,
+  "avg_loss": -6.42,
   "pf": 0.0
 }

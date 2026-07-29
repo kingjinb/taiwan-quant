@@ -85,9 +85,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 均线回踩(1.4%) + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 112.5,
+    "pnl_pct": -6.25
   },
   {
     "stock_id": "2884",
@@ -115,6 +115,21 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "4904",
+    "stock_name": "远传",
+    "date": "2026-07-29",
+    "entry_price": 106.5,
+    "target_price": 114.38,
+    "stop_loss": 101.25,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + MACD转正",
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
