@@ -70,9 +70,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 23.15,
+    "pnl_pct": -6.28
   },
   {
     "stock_id": "5871",
@@ -160,9 +160,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 26.1,
+    "pnl_pct": -5.43
   },
   {
     "stock_id": "2357",
@@ -265,6 +265,21 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头 + 突破",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2317",
+    "stock_name": "鸿海",
+    "date": "2026-08-06",
+    "entry_price": 264.5,
+    "target_price": 277.97,
+    "stop_loss": 255.52,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "MEDIUM",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
