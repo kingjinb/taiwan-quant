@@ -220,9 +220,9 @@
     "holding_days": 3,
     "confidence": "LOW",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 91.4,
+    "pnl_pct": 5.54
   },
   {
     "stock_id": "2301",
@@ -385,6 +385,36 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2356",
+    "stock_name": "英业达",
+    "date": "2026-08-12",
+    "entry_price": 69.0,
+    "target_price": 73.14,
+    "stop_loss": 66.24,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "4938",
+    "stock_name": "和硕",
+    "date": "2026-08-12",
+    "entry_price": 91.4,
+    "target_price": 96.88,
+    "stop_loss": 87.74,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
