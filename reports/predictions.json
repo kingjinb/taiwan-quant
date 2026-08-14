@@ -250,9 +250,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 512.0,
+    "pnl_pct": -6.91
   },
   {
     "stock_id": "2883",
@@ -430,9 +430,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 996.0,
+    "pnl_pct": 6.3
   },
   {
     "stock_id": "2454",
@@ -460,6 +460,51 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2887",
+    "stock_name": "台新金",
+    "date": "2026-08-14",
+    "entry_price": 37.75,
+    "target_price": 40.02,
+    "stop_loss": 36.24,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2357",
+    "stock_name": "华硕",
+    "date": "2026-08-14",
+    "entry_price": 996.0,
+    "target_price": 1055.76,
+    "stop_loss": 956.16,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2383",
+    "stock_name": "台光電",
+    "date": "2026-08-14",
+    "entry_price": 6165.0,
+    "target_price": 6534.9,
+    "stop_loss": 5918.4,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
