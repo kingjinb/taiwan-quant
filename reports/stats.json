@@ -1,9 +1,9 @@
 {
-  "total": 34,
-  "resolved": 19,
-  "pending": 15,
-  "wr": 42.1,
-  "avg_win": 7.86,
-  "avg_loss": -6.32,
-  "pf": 1.24
+  "total": 37,
+  "resolved": 24,
+  "pending": 13,
+  "wr": 37.5,
+  "avg_win": 7.9,
+  "avg_loss": -5.81,
+  "pf": 1.36
 }
