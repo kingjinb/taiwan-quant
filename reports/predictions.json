@@ -580,9 +580,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 6290.0,
+    "pnl_pct": 13.33
   },
   {
     "stock_id": "2383",
@@ -625,9 +625,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 231.0,
+    "pnl_pct": -6.1
   },
   {
     "stock_id": "3034",
@@ -685,9 +685,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 57.6,
+    "pnl_pct": -10.0
   },
   {
     "stock_id": "2637",
@@ -700,9 +700,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 91.2,
+    "pnl_pct": -6.08
   },
   {
     "stock_id": "1303",
@@ -715,9 +715,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 均线回踩(0.3%)",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 207.0,
+    "pnl_pct": 15.0
   },
   {
     "stock_id": "2301",
@@ -730,9 +730,9 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 307.0,
+    "pnl_pct": 6.97
   },
   {
     "stock_id": "2881",
@@ -756,6 +756,66 @@
     "entry_price": 555.0,
     "target_price": 588.3,
     "stop_loss": 532.8,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "MEDIUM",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2301",
+    "stock_name": "光宝科",
+    "date": "2026-08-26",
+    "entry_price": 307.0,
+    "target_price": 325.42,
+    "stop_loss": 294.72,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2887",
+    "stock_name": "台新金",
+    "date": "2026-08-26",
+    "entry_price": 37.5,
+    "target_price": 39.75,
+    "stop_loss": 36.0,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2357",
+    "stock_name": "华硕",
+    "date": "2026-08-26",
+    "entry_price": 971.0,
+    "target_price": 1029.26,
+    "stop_loss": 932.16,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2884",
+    "stock_name": "玉山金",
+    "date": "2026-08-26",
+    "entry_price": 38.7,
+    "target_price": 41.02,
+    "stop_loss": 37.15,
     "rr_ratio": 1.5,
     "holding_days": 3,
     "confidence": "MEDIUM",
