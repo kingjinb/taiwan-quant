@@ -898,5 +898,35 @@
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
+  },
+  {
+    "stock_id": "2801",
+    "stock_name": "彰银",
+    "date": "2026-08-28",
+    "entry_price": 24.85,
+    "target_price": 26.14,
+    "stop_loss": 23.99,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "8046",
+    "stock_name": "南电",
+    "date": "2026-08-28",
+    "entry_price": 1240.0,
+    "target_price": 1314.4,
+    "stop_loss": 1190.4,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "MEDIUM",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
   }
 ]
