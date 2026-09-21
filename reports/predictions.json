@@ -1408,5 +1408,50 @@
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
+  },
+  {
+    "stock_id": "2454",
+    "stock_name": "联发科",
+    "date": "2026-09-21",
+    "entry_price": 5010.0,
+    "target_price": 5310.6,
+    "stop_loss": 4809.6,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "3711",
+    "stock_name": "日月光",
+    "date": "2026-09-21",
+    "entry_price": 663.0,
+    "target_price": 702.78,
+    "stop_loss": 636.48,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "MEDIUM",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2308",
+    "stock_name": "台达电",
+    "date": "2026-09-21",
+    "entry_price": 1875.0,
+    "target_price": 1987.5,
+    "stop_loss": 1800.0,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "MEDIUM",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
   }
 ]
