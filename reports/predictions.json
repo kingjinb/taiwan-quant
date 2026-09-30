@@ -1360,9 +1360,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 119.5,
+    "pnl_pct": -3.63
   },
   {
     "stock_id": "2891",
@@ -1435,9 +1435,9 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 703.0,
+    "pnl_pct": 6.03
   },
   {
     "stock_id": "2308",
@@ -1540,6 +1540,51 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 均线回踩(0.3%)",
+    "status": "hit_target",
+    "result_price": 27.6,
+    "pnl_pct": 0.36
+  },
+  {
+    "stock_id": "1301",
+    "stock_name": "台塑",
+    "date": "2026-09-30",
+    "entry_price": 68.1,
+    "target_price": 72.19,
+    "stop_loss": 65.38,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "1303",
+    "stock_name": "南亚",
+    "date": "2026-09-30",
+    "entry_price": 255.5,
+    "target_price": 270.83,
+    "stop_loss": 245.28,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "0056",
+    "stock_name": "元大高股息",
+    "date": "2026-09-30",
+    "entry_price": 56.95,
+    "target_price": 59.1,
+    "stop_loss": 55.52,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "MEDIUM",
+    "reason": "Supertrend多头",
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
