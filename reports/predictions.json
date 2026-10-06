@@ -1693,5 +1693,50 @@
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
+  },
+  {
+    "stock_id": "2383",
+    "stock_name": "台光電",
+    "date": "2026-10-06",
+    "entry_price": 5995.0,
+    "target_price": 6354.7,
+    "stop_loss": 5755.2,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "3661",
+    "stock_name": "世芯KY",
+    "date": "2026-10-06",
+    "entry_price": 4180.0,
+    "target_price": 4430.8,
+    "stop_loss": 4012.8,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2637",
+    "stock_name": "慧洋KY",
+    "date": "2026-10-06",
+    "entry_price": 100.0,
+    "target_price": 106.0,
+    "stop_loss": 96.0,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 均线回踩(0.5%)",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
   }
 ]
