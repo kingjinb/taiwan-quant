@@ -1210,9 +1210,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 51.9,
+    "pnl_pct": 6.46
   },
   {
     "stock_id": "2890",
@@ -1345,9 +1345,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_target",
+    "result_price": 148.0,
+    "pnl_pct": 3.86
   },
   {
     "stock_id": "3045",
@@ -1690,9 +1690,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 276.0,
+    "pnl_pct": -7.38
   },
   {
     "stock_id": "2383",
@@ -1705,9 +1705,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 5545.0,
+    "pnl_pct": -7.51
   },
   {
     "stock_id": "3661",
@@ -1851,6 +1851,36 @@
     "entry_price": 7325.0,
     "target_price": 7764.5,
     "stop_loss": 7032.0,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2880",
+    "stock_name": "华南金",
+    "date": "2026-10-13",
+    "entry_price": 49.35,
+    "target_price": 52.31,
+    "stop_loss": 47.38,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "5876",
+    "stock_name": "上海商银",
+    "date": "2026-10-13",
+    "entry_price": 51.9,
+    "target_price": 55.01,
+    "stop_loss": 49.82,
     "rr_ratio": 1.5,
     "holding_days": 3,
     "confidence": "HIGH",
