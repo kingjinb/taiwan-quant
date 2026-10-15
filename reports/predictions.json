@@ -1240,9 +1240,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 均线回踩(0.9%) + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 176.0,
+    "pnl_pct": -5.63
   },
   {
     "stock_id": "1326",
@@ -1615,9 +1615,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 1345.0,
+    "pnl_pct": -5.28
   },
   {
     "stock_id": "0050",
@@ -1630,9 +1630,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 108.9,
+    "pnl_pct": -6.08
   },
   {
     "stock_id": "2308",
@@ -1660,9 +1660,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 2440.0,
+    "pnl_pct": -5.24
   },
   {
     "stock_id": "3711",
@@ -1675,9 +1675,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 673.0,
+    "pnl_pct": -9.3
   },
   {
     "stock_id": "2301",
@@ -1900,9 +1900,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 77.0,
+    "pnl_pct": -9.94
   },
   {
     "stock_id": "1303",
@@ -1915,9 +1915,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 314.5,
+    "pnl_pct": -9.89
   },
   {
     "stock_id": "2002",
@@ -1960,6 +1960,66 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "4904",
+    "stock_name": "远传",
+    "date": "2026-10-15",
+    "entry_price": 113.0,
+    "target_price": 119.78,
+    "stop_loss": 108.48,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "2884",
+    "stock_name": "玉山金",
+    "date": "2026-10-15",
+    "entry_price": 48.8,
+    "target_price": 51.73,
+    "stop_loss": 46.85,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "3045",
+    "stock_name": "台湾大",
+    "date": "2026-10-15",
+    "entry_price": 131.0,
+    "target_price": 138.86,
+    "stop_loss": 125.76,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
+  },
+  {
+    "stock_id": "1216",
+    "stock_name": "统一",
+    "date": "2026-10-15",
+    "entry_price": 79.5,
+    "target_price": 84.27,
+    "stop_loss": 76.32,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + 突破 + MACD转正",
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
