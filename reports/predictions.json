@@ -2188,5 +2188,20 @@
     "status": "pending",
     "result_price": null,
     "pnl_pct": null
+  },
+  {
+    "stock_id": "2891",
+    "stock_name": "中信金",
+    "date": "2026-11-02",
+    "entry_price": 75.0,
+    "target_price": 79.5,
+    "stop_loss": 72.0,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
   }
 ]
