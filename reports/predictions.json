@@ -1975,9 +1975,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 106.0,
+    "pnl_pct": -6.19
   },
   {
     "stock_id": "2884",
@@ -2140,9 +2140,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 52.8,
+    "pnl_pct": -4.35
   },
   {
     "stock_id": "2892",
