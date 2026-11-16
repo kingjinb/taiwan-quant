@@ -2245,9 +2245,9 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 3660.0,
+    "pnl_pct": -8.96
   },
   {
     "stock_id": "1326",
@@ -2260,8 +2260,8 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 69.8,
+    "pnl_pct": -6.93
   }
 ]
