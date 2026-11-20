@@ -2,31 +2,16 @@
   {
     "stock_id": "2412",
     "stock_name": "中华电",
-    "analysis_date": "2026-11-19",
-    "entry_price": 166.0,
-    "target_price": 175.96,
-    "stop_loss": 159.36,
+    "analysis_date": "2026-11-20",
+    "entry_price": 162.5,
+    "target_price": 171.5,
+    "stop_loss": 156.5,
     "rr_ratio": 1.5,
     "holding_days": 3,
     "confidence": "HIGH",
-    "score": 75.6,
-    "reason": "Supertrend多头",
-    "potential_profit_pct": 6.0,
-    "potential_loss_pct": 4.0
-  },
-  {
-    "stock_id": "2618",
-    "stock_name": "长荣航",
-    "analysis_date": "2026-11-19",
-    "entry_price": 46.4,
-    "target_price": 49.18,
-    "stop_loss": 44.54,
-    "rr_ratio": 1.5,
-    "holding_days": 3,
-    "confidence": "MEDIUM",
-    "score": 67.0,
-    "reason": "Supertrend多头 + MACD转正",
-    "potential_profit_pct": 5.99,
-    "potential_loss_pct": 4.01
+    "score": 77.0,
+    "reason": "Supertrend多头 + 均线回踩(0.8%)",
+    "potential_profit_pct": 5.54,
+    "potential_loss_pct": 3.69
   }
 ]

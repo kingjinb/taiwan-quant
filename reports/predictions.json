@@ -1870,9 +1870,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 47.0,
+    "pnl_pct": -4.76
   },
   {
     "stock_id": "5876",
@@ -2005,9 +2005,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 123.0,
+    "pnl_pct": -6.11
   },
   {
     "stock_id": "1216",
@@ -2050,9 +2050,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + 突破 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 26.4,
+    "pnl_pct": -6.22
   },
   {
     "stock_id": "0056",
@@ -2200,9 +2200,9 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 68.0,
+    "pnl_pct": -9.33
   },
   {
     "stock_id": "5876",
@@ -2275,9 +2275,9 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 51.8,
+    "pnl_pct": -5.3
   },
   {
     "stock_id": "2618",
@@ -2290,9 +2290,9 @@
     "holding_days": 3,
     "confidence": "MEDIUM",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 44.65,
+    "pnl_pct": -4.59
   },
   {
     "stock_id": "3661",
