@@ -2,16 +2,16 @@
   {
     "stock_id": "2412",
     "stock_name": "中华电",
-    "analysis_date": "2026-11-20",
-    "entry_price": 162.5,
-    "target_price": 171.5,
-    "stop_loss": 156.5,
+    "analysis_date": "2026-11-23",
+    "entry_price": 164.5,
+    "target_price": 174.37,
+    "stop_loss": 157.92,
     "rr_ratio": 1.5,
     "holding_days": 3,
     "confidence": "HIGH",
-    "score": 77.0,
-    "reason": "Supertrend多头 + 均线回踩(0.8%)",
-    "potential_profit_pct": 5.54,
-    "potential_loss_pct": 3.69
+    "score": 70.3,
+    "reason": "Supertrend多头",
+    "potential_profit_pct": 6.0,
+    "potential_loss_pct": 4.0
   }
 ]
