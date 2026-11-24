@@ -2308,5 +2308,20 @@
     "status": "hit_stop",
     "result_price": 3600.0,
     "pnl_pct": -8.86
+  },
+  {
+    "stock_id": "2618",
+    "stock_name": "长荣航",
+    "date": "2026-11-24",
+    "entry_price": 48.6,
+    "target_price": 51.52,
+    "stop_loss": 46.66,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "HIGH",
+    "reason": "Supertrend多头",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
   }
 ]
