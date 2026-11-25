@@ -2320,8 +2320,8 @@
     "holding_days": 3,
     "confidence": "HIGH",
     "reason": "Supertrend多头",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 45.7,
+    "pnl_pct": -5.97
   }
 ]
