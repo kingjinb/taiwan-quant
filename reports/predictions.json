@@ -2323,5 +2323,20 @@
     "status": "hit_stop",
     "result_price": 45.7,
     "pnl_pct": -5.97
+  },
+  {
+    "stock_id": "3661",
+    "stock_name": "世芯KY",
+    "date": "2026-11-26",
+    "entry_price": 3735.0,
+    "target_price": 3756.38,
+    "stop_loss": 3720.75,
+    "rr_ratio": 1.5,
+    "holding_days": 3,
+    "confidence": "LOW",
+    "reason": "Supertrend多头 + MACD转正",
+    "status": "pending",
+    "result_price": null,
+    "pnl_pct": null
   }
 ]
