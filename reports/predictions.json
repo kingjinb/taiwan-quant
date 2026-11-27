@@ -2335,8 +2335,8 @@
     "holding_days": 3,
     "confidence": "LOW",
     "reason": "Supertrend多头 + MACD转正",
-    "status": "pending",
-    "result_price": null,
-    "pnl_pct": null
+    "status": "hit_stop",
+    "result_price": 3595.0,
+    "pnl_pct": -3.75
   }
 ]
